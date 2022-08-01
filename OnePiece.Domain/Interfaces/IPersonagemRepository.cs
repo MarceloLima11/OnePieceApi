@@ -11,5 +11,8 @@ namespace OnePiece.Domain.Interfaces
     {
         Task<IEnumerable<Personagem>> GetPersonagensAsync();
         Task<Personagem> GetByIdAsync(int id);
+        Task<Personagem> CreateAsync(Personagem personagem);
+        Task<Personagem> UpdateAsync(Personagem personagem);
+        Task<Personagem> RemoveAsync(Personagem personagem);
     }
 }

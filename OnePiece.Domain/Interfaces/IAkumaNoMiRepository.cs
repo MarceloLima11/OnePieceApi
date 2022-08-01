@@ -11,5 +11,8 @@ namespace OnePiece.Domain.Interfaces
     {
         Task<IEnumerable<AkumaNoMi>> GetAkumasAsync();
         Task<AkumaNoMi> GetByIdAsync(int id);
+        Task<AkumaNoMi> CreateAsync(AkumaNoMi akuma);
+        Task<AkumaNoMi> UpdateAsync(AkumaNoMi akuma);
+        Task<AkumaNoMi> RemoveAsync(AkumaNoMi akuma);
     }
 }

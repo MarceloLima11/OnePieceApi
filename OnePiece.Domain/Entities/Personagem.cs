@@ -9,6 +9,9 @@ namespace OnePiece.Domain.Entities
 {
     public sealed class Personagem : Entity
     {
+        public Personagem()
+        { }
+
         public Personagem(string nome, int idade, string linhagem, string altura, bool vivo, string recompensa,
             string fraseMarcante, string primeiraAparicao, string descricao, string imagemUrl, bool topCinco)
         {
@@ -74,7 +77,7 @@ namespace OnePiece.Domain.Entities
             DomainExceptionValidation.When(altura.Length < 2,
                 "Altura inválida. Altura deve ser maior que 2");
 
-            DomainExceptionValidation.When(altura.Length < 6,
+            DomainExceptionValidation.When(altura.Length > 6,
                 "Altura inválida. Altura deve ser menor que 6");
 
             // Recompensa
@@ -84,7 +87,7 @@ namespace OnePiece.Domain.Entities
             DomainExceptionValidation.When(recompensa.Length < 3,
                 "Recompensa inválida. Recompensa deve ser maior que 3");
 
-            DomainExceptionValidation.When(recompensa.Length < 13,
+            DomainExceptionValidation.When(recompensa.Length > 13,
                 "Recompensa inválida. Recompensa deve ser menor que 13");
 
             // Frase Marcante
@@ -94,7 +97,7 @@ namespace OnePiece.Domain.Entities
             DomainExceptionValidation.When(fraseMarcante.Length < 10,
                 "Frase inválida. Frase marcante deve ter no mínimo 10 caracteres");
 
-            DomainExceptionValidation.When(fraseMarcante.Length < 300,
+            DomainExceptionValidation.When(fraseMarcante.Length > 300,
                 "Frase inválida. Frase marcante deve ter no máximo 300 caracteres");
 
             // Primeira Aparição
@@ -104,7 +107,7 @@ namespace OnePiece.Domain.Entities
             DomainExceptionValidation.When(primeiraAparicao.Length < 10,
                 "Primeira aparição inválida. Primeira aparição deve ter no mínimo 10 caracteres");
 
-            DomainExceptionValidation.When(primeiraAparicao.Length < 200,
+            DomainExceptionValidation.When(primeiraAparicao.Length > 200,
                 "Primeira aparição inválida. Primeira aparição deve ter no máximo 200");
 
             // Descrição
@@ -114,14 +117,14 @@ namespace OnePiece.Domain.Entities
             DomainExceptionValidation.When(descricao.Length < 1000,
                 "Descrição inválida. Descrição deve ter no mínimo 1000 caracteres");
 
-            DomainExceptionValidation.When(descricao.Length < 20000,
+            DomainExceptionValidation.When(descricao.Length > 20000,
                 "Descrição inválida. Descrição deve ter no máximo 20.000 caracteres");
 
             // ImagemUrl
             DomainExceptionValidation.When(string.IsNullOrEmpty(imagemUrl),
                 "ImagemUrl inválida. A ImagemUrl é obrigatória");
 
-            DomainExceptionValidation.When(imagemUrl.Length < 300,
+            DomainExceptionValidation.When(imagemUrl.Length > 300,
                 "ImagemUrl inválida. ImagemUrl deve ter no máximo 300 caracteres");
 
             Nome = nome;

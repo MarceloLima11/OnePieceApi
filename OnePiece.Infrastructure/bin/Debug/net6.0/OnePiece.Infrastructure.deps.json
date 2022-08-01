@@ -11,6 +11,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.7",
           "Microsoft.EntityFrameworkCore.Design": "6.0.7",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.7",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.7",
           "Microsoft.Extensions.Configuration.Json": "6.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.5",

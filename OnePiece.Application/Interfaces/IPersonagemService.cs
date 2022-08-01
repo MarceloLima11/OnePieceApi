@@ -11,5 +11,8 @@ namespace OnePiece.Application.Interfaces
     {
         Task<IEnumerable<PersonagemDTO>> GetPersonagens();
         Task<PersonagemDTO> GetById(int id);
+        Task Add(PersonagemDTO personagemDto);
+        Task Update(PersonagemDTO personagemDto);
+        Task Remove(int id);
     }
 }

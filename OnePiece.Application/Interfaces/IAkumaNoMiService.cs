@@ -9,7 +9,10 @@ namespace OnePiece.Application.Interfaces
 {
     public interface IAkumaNoMiService
     {
-        Task<IEnumerable<AkumaNoMiDTO>> GetPersonagens();
+        Task<IEnumerable<AkumaNoMiDTO>> GetAkumas();
         Task<AkumaNoMiDTO> GetById(int id);
+        Task Add (AkumaNoMiDTO akumasDto);
+        Task Update (AkumaNoMiDTO akumasDto);
+        Task Remove (int id);
     }
 }

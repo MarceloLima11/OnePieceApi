@@ -28,5 +28,25 @@ namespace OnePiece.Infrastructure.Repositories
         {
             return await _akumaContext.AkumaNoMis.FindAsync(id);
         }
+        public async Task<AkumaNoMi> CreateAsync(AkumaNoMi akuma)
+        {
+            _akumaContext.Add(akuma);
+            await _akumaContext.SaveChangesAsync();
+            return akuma;
+        }
+
+        public async Task<AkumaNoMi> RemoveAsync(AkumaNoMi akuma)
+        {
+            _akumaContext.Remove(akuma);
+            await _akumaContext.SaveChangesAsync();
+            return akuma;
+        }
+
+        public async Task<AkumaNoMi> UpdateAsync(AkumaNoMi akuma)
+        {
+            _akumaContext.Update(akuma);
+            await _akumaContext.SaveChangesAsync();
+            return akuma;
+        }
     }
 }

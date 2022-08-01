@@ -6,7 +6,6 @@ namespace OnePiece.Infrastructure.Context
 {
     public class ApplicationDbContext : DbContext
     {
-        private readonly IConfiguration _configuration;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         { }

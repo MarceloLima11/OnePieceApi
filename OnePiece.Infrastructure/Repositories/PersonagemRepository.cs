@@ -14,9 +14,9 @@ namespace OnePiece.Infrastructure.Repositories
     {
         private ApplicationDbContext _personagemContext;
 
-        public PersonagemRepository(ApplicationDbContext personagemRepository)
+        public PersonagemRepository(ApplicationDbContext context)
         {
-            _personagemContext = personagemRepository;
+            _personagemContext = context;
         }
 
         public async Task<IEnumerable<Personagem>> GetPersonagensAsync()
@@ -28,6 +28,28 @@ namespace OnePiece.Infrastructure.Repositories
         {
             return await _personagemContext.Personagens.Include(x => x.AkumaNoMi)
                 .SingleOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<Personagem> CreateAsync(Personagem personagem)
+        {
+            _personagemContext.Add(personagem);
+            await _personagemContext.SaveChangesAsync();
+            return personagem;
+            
+        }
+
+        public async Task<Personagem> UpdateAsync(Personagem personagem)
+        {
+            _personagemContext.Update(personagem);
+            await _personagemContext.SaveChangesAsync();
+            return personagem;
+        }
+
+        public async Task<Personagem> RemoveAsync(Personagem personagem)
+        {
+            _personagemContext.Remove(personagem);
+            await _personagemContext.SaveChangesAsync();
+            return personagem;
         }
     }
 }
