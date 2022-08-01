@@ -20,7 +20,7 @@ namespace OnePiece.Infrastructure.Context
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-            optionsBuilder.UseNpgsql("OnePieceConnection");
+            optionsBuilder.UseNpgsql("User ID = postgres; Password = semsenha1; Host = localhost; Database = OnePieceDB");
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }
