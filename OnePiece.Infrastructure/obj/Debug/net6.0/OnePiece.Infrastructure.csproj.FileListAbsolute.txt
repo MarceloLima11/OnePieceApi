@@ -1,0 +1,17 @@
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\OnePiece.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\OnePiece.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\OnePiece.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\OnePiece.Infrastructure.AssemblyInfo.cs
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\OnePiece.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\bin\Debug\net6.0\OnePiece.Infrastructure.deps.json
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\bin\Debug\net6.0\OnePiece.Infrastructure.runtimeconfig.json
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\bin\Debug\net6.0\OnePiece.Infrastructure.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\bin\Debug\net6.0\OnePiece.Infrastructure.pdb
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\bin\Debug\net6.0\OnePiece.Domain.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\bin\Debug\net6.0\OnePiece.Domain.pdb
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\OnePiece.Infrastructure.csproj.CopyComplete
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\OnePiece.Infrastructure.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\refint\OnePiece.Infrastructure.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\OnePiece.Infrastructure.pdb
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\OnePiece.Infrastructure.genruntimeconfig.cache
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Infrastructure\obj\Debug\net6.0\ref\OnePiece.Infrastructure.dll

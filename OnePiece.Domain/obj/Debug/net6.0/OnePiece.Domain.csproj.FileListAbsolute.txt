@@ -1,0 +1,12 @@
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\obj\Debug\net6.0\OnePiece.Domain.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\obj\Debug\net6.0\OnePiece.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\obj\Debug\net6.0\OnePiece.Domain.AssemblyInfoInputs.cache
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\obj\Debug\net6.0\OnePiece.Domain.AssemblyInfo.cs
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\obj\Debug\net6.0\OnePiece.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\bin\Debug\net6.0\OnePiece.Domain.deps.json
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\bin\Debug\net6.0\OnePiece.Domain.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\bin\Debug\net6.0\OnePiece.Domain.pdb
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\obj\Debug\net6.0\OnePiece.Domain.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\obj\Debug\net6.0\refint\OnePiece.Domain.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\obj\Debug\net6.0\OnePiece.Domain.pdb
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Domain\obj\Debug\net6.0\ref\OnePiece.Domain.dll

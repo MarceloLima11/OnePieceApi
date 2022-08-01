@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "O09YxI5rslY7iunrQiRDk9OwJOgz/BmGJN1F40XqThSqWzmSsGGN4OO5LgCqJXzSA+LwBMPCASdX1FOyCiRXKw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\Downloads\\OnePieceApi\\OnePiece\\OnePiece.Application\\OnePiece.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

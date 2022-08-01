@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "OnePiece.Domain/1.0.0": {
+        "runtime": {
+          "OnePiece.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OnePiece.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
