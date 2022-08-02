@@ -447,6 +447,9 @@
       "OnePiece.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.7"
+        },
         "compile": {
           "bin/placeholder/OnePiece.Domain.dll": {}
         },
