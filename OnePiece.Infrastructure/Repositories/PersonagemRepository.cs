@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnePiece.Domain.Entities;
 using OnePiece.Domain.Interfaces;
+using OnePiece.Domain.Pagination;
 using OnePiece.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,12 @@ namespace OnePiece.Infrastructure.Repositories
             _personagemContext = context;
         }
 
-        public async Task<IEnumerable<Personagem>> GetPersonagensAsync()
+        public async Task<IEnumerable<Personagem>> GetPersonagensAsync(PersonagemParameters personagemParameters)
         {
-            return await _personagemContext.Personagens.ToListAsync();
+            return await _personagemContext.Personagens
+                .Skip((personagemParameters.PageNumber - 1) * personagemParameters.PageSize)
+                .Take(personagemParameters.PageSize)
+                .ToListAsync();
         }
 
         public async Task<Personagem> GetByIdAsync(int id)

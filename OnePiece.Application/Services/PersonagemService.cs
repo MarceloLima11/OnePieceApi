@@ -3,6 +3,7 @@ using OnePiece.Application.DTOs;
 using OnePiece.Application.Interfaces;
 using OnePiece.Domain.Entities;
 using OnePiece.Domain.Interfaces;
+using OnePiece.Domain.Pagination;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,9 @@ namespace OnePiece.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<PersonagemDTO>> GetPersonagens()
+        public async Task<IEnumerable<PersonagemDTO>> GetPersonagens(PersonagemParameters personagemParameters)
         {
-            var personagensEntity = await _personagemRepository.GetPersonagensAsync();
+            var personagensEntity = await _personagemRepository.GetPersonagensAsync(personagemParameters);
             return _mapper.Map<IEnumerable<PersonagemDTO>>(personagensEntity);
         }
 

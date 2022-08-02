@@ -1,4 +1,5 @@
 ﻿using OnePiece.Domain.Entities;
+using OnePiece.Domain.Pagination;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace OnePiece.Domain.Interfaces
 {
     public interface IPersonagemRepository
     {
-        Task<IEnumerable<Personagem>> GetPersonagensAsync();
+        Task<IEnumerable<Personagem>> GetPersonagensAsync(PersonagemParameters produtosParameters);
         Task<Personagem> GetByIdAsync(int id);
         Task<Personagem> CreateAsync(Personagem personagem);
         Task<Personagem> UpdateAsync(Personagem personagem);
