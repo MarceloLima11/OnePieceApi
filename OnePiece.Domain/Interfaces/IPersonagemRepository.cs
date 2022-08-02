@@ -10,7 +10,7 @@ namespace OnePiece.Domain.Interfaces
 {
     public interface IPersonagemRepository
     {
-        Task<IEnumerable<Personagem>> GetPersonagensAsync(PersonagemParameters produtosParameters);
+        Task<PagedList<Personagem>> GetPersonagensAsync(PersonagemParameters produtosParameters);
         Task<Personagem> GetByIdAsync(int id);
         Task<Personagem> CreateAsync(Personagem personagem);
         Task<Personagem> UpdateAsync(Personagem personagem);

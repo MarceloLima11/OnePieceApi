@@ -10,7 +10,7 @@ namespace OnePiece.Application.Interfaces
 {
     public interface IPersonagemService
     {
-        Task<IEnumerable<PersonagemDTO>> GetPersonagens(PersonagemParameters personagemParameters);
+        Task<PagedList<PersonagemDTO>> GetPersonagens(PersonagemParameters personagemParameters);
         Task<PersonagemDTO> GetById(int id);
         Task Add(PersonagemDTO personagemDto);
         Task Update(PersonagemDTO personagemDto);

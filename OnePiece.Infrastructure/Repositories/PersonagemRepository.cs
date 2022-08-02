@@ -20,12 +20,15 @@ namespace OnePiece.Infrastructure.Repositories
             _personagemContext = context;
         }
 
-        public async Task<IEnumerable<Personagem>> GetPersonagensAsync(PersonagemParameters personagemParameters)
+        public async Task<PagedList<Personagem>> GetPersonagensAsync(PersonagemParameters personagemParameters)
         {
-            return await _personagemContext.Personagens
-                .Skip((personagemParameters.PageNumber - 1) * personagemParameters.PageSize)
-                .Take(personagemParameters.PageSize)
-                .ToListAsync();
+            //return await _personagemContext.Personagens
+            //    .Skip((personagemParameters.PageNumber - 1) * personagemParameters.PageSize)
+            //    .Take(personagemParameters.PageSize)
+            //    .ToListAsync();
+
+            return PagedList<Personagem>.ToPagedList(_personagemContext.Personagens,
+                personagemParameters.PageNumber, personagemParameters.PageSize);
         }
 
         public async Task<Personagem> GetByIdAsync(int id)

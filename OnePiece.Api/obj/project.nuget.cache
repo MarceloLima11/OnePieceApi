@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tNrx/uu/lBMMp4EqVDEET0bI/t3Oz54mrrKolUK1MEe6NXSTGzAp8Do9es8Dr39I0U4lRnxNK7BE9iY96MShHg==",
+  "dgSpecHash": "GSesnTrSUTsjPpx3P2etULuBWMO0ETlzzYTseEc7LUOtgsEVr7zSnVKvif+vqWorVka8REPQoe4gaMQUeH1FVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Downloads\\OnePieceApi\\OnePiece\\OnePiece.Api\\OnePiece.Api.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\npgsql\\6.0.5\\npgsql.6.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.5\\npgsql.entityframeworkcore.postgresql.6.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",

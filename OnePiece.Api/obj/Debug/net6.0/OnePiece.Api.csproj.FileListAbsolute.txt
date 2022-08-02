@@ -41,3 +41,4 @@ C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Api\obj\Debug\net
 C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Api\obj\Debug\net6.0\OnePiece.Api.pdb
 C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Api\obj\Debug\net6.0\OnePiece.Api.genruntimeconfig.cache
 C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Api\obj\Debug\net6.0\ref\OnePiece.Api.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Api\bin\Debug\net6.0\Newtonsoft.Json.dll

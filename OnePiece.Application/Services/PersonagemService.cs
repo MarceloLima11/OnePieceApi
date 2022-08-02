@@ -24,10 +24,10 @@ namespace OnePiece.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<PersonagemDTO>> GetPersonagens(PersonagemParameters personagemParameters)
+        public async Task<PagedList<PersonagemDTO>> GetPersonagens(PersonagemParameters personagemParameters)
         {
             var personagensEntity = await _personagemRepository.GetPersonagensAsync(personagemParameters);
-            return _mapper.Map<IEnumerable<PersonagemDTO>>(personagensEntity);
+            return _mapper.Map<PagedList<PersonagemDTO>>(personagensEntity);
         }
 
         public async Task<PersonagemDTO> GetById(int id)

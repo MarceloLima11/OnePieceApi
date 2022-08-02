@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using OnePiece.Application.DTOs;
 using OnePiece.Application.Interfaces;
 using OnePiece.Domain.Pagination;
@@ -20,6 +21,19 @@ namespace OnePiece.Api.Controllers
         public async Task<ActionResult<IEnumerable<PersonagemDTO>>> Get([FromQuery] PersonagemParameters personagemParameters)
         {
             var personagens = await _personagemService.GetPersonagens(personagemParameters);
+
+            var metadata = new
+            {
+                personagens.TotalCount,
+                personagens.PageSize,
+                personagens.CurrentPage,
+                personagens.TotalPages,
+                personagens.HasNext,
+                personagens.HasPrevious
+            };
+
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
+
             return Ok(personagens);
         }
 
