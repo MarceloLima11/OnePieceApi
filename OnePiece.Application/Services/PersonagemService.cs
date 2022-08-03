@@ -29,7 +29,8 @@ namespace OnePiece.Application.Services
 
         public async Task<PagedList<Personagem>> GetPersonagens(PersonagemParameters personagemParameters)
         {
-            return await PagedList<Personagem>.ToPagedList(_personagemContext.Personagens, personagemParameters.PageNumber, personagemParameters.PageSize);
+            return await PagedList<Personagem>.ToPagedList(_personagemRepository.GetPersonagensAkumasAsync(),
+                personagemParameters.PageNumber, personagemParameters.PageSize);
         }
 
         public async Task<PersonagemDTO> GetById(int id)

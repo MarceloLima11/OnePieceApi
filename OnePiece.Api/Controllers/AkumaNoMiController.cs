@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using OnePiece.Application.DTOs;
 using OnePiece.Application.Interfaces;
+using OnePiece.Domain.Pagination;
 
 namespace OnePiece.Api.Controllers
 {
@@ -9,17 +12,33 @@ namespace OnePiece.Api.Controllers
     public class AkumaNoMiController : Controller
     {
         private readonly IAkumaNoMiService _akumaService;
+        private readonly IMapper _mapper;
 
-        public AkumaNoMiController(IAkumaNoMiService akumasService)
+        public AkumaNoMiController(IAkumaNoMiService akumasService, IMapper mapper)
         {
             _akumaService = akumasService;
+            _mapper = mapper;   
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AkumaNoMiDTO>>> Get()
+        public async Task<ActionResult<IEnumerable<AkumaNoMiDTO>>> Get([FromQuery] AkumaParameters akumaParameters)
         {
-            var akumas = await _akumaService.GetAkumas();
-            return Ok(akumas);
+            var akumas = await _akumaService.GetAkumas(akumaParameters);
+
+            var metadata = new {
+                akumas.TotalCount,
+                akumas.PageSize,
+                akumas.CurrentPage,
+                akumas.TotalPages,
+                akumas.HasNext,
+                akumas.HasPrevious
+            };
+
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
+
+            var akumasDto = _mapper.Map<PagedList<AkumaNoMiDTO>>(akumas);
+
+            return Ok(akumasDto);
         }
 
         [HttpGet("{id}", Name = "GetAkumaNoMi")]

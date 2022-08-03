@@ -24,5 +24,6 @@ namespace OnePiece.Application.DTOs
         public string ImagemUrl { get; set; }
         public bool TopCinco { get; set; }
         public int? AkumaNoMiId { get; set; }
+        public AkumaNoMiDTO AkumaNoMi { get; set; }
     }
 }

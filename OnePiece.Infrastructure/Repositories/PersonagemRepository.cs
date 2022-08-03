@@ -20,16 +20,21 @@ namespace OnePiece.Infrastructure.Repositories
             _personagemContext = context;
         }
 
-        public async Task<PagedList<Personagem>> GetPersonagensAsync(PersonagemParameters personagemParameters)
+        public IQueryable<Personagem> GetPersonagensAkumasAsync()
         {
-            //return await _personagemContext.Personagens
-            //    .Skip((personagemParameters.PageNumber - 1) * personagemParameters.PageSize)
-            //    .Take(personagemParameters.PageSize)
-            //    .ToListAsync();
-
-            return await PagedList<Personagem>.ToPagedList(_personagemContext.Personagens,
-                personagemParameters.PageNumber, personagemParameters.PageSize);
+            return _personagemContext.Personagens.Include(x => x.AkumaNoMi);
         }
+
+        //public async Task<PagedList<Personagem>> GetPersonagensAsync(PersonagemParameters personagemParameters)
+        //{
+        //    //return await _personagemContext.Personagens
+        //    //    .Skip((personagemParameters.PageNumber - 1) * personagemParameters.PageSize)
+        //    //    .Take(personagemParameters.PageSize)
+        //    //    .ToListAsync();
+
+        //    return await PagedList<Personagem>.ToPagedList(_personagemContext.Personagens.Include(x => x.AkumaNoMi),
+        //        personagemParameters.PageNumber, personagemParameters.PageSize);
+        //}
 
         public async Task<Personagem> GetByIdAsync(int id)
         {

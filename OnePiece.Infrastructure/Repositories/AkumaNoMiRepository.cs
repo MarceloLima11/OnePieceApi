@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnePiece.Domain.Entities;
 using OnePiece.Domain.Interfaces;
+using OnePiece.Domain.Pagination;
 using OnePiece.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,10 @@ namespace OnePiece.Infrastructure.Repositories
             _akumaContext = akumaContext;
         }
 
-        public async Task<IEnumerable<AkumaNoMi>> GetAkumasAsync()
+        public async Task<PagedList<AkumaNoMi>> GetAkumasAsync(AkumaParameters akumaParameters)
         {
-            return await _akumaContext.AkumaNoMis.ToListAsync();
+            return await PagedList<AkumaNoMi>.ToPagedList(_akumaContext.AkumaNoMis,
+                akumaParameters.PageNumber, akumaParameters.PageSize);
         }
 
         public async Task<AkumaNoMi> GetByIdAsync(int id)

@@ -3,6 +3,8 @@ using OnePiece.Application.DTOs;
 using OnePiece.Application.Interfaces;
 using OnePiece.Domain.Entities;
 using OnePiece.Domain.Interfaces;
+using OnePiece.Domain.Pagination;
+using OnePiece.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,17 +17,20 @@ namespace OnePiece.Application.Services
     {
         private readonly IAkumaNoMiRepository _akumaRepository;
         private readonly IMapper _mapper;
+        private ApplicationDbContext _akumaContext;
 
-        public AkumaNoMiService(IAkumaNoMiRepository akumaRepository, IMapper mapper)
+        public AkumaNoMiService(IAkumaNoMiRepository akumaRepository, IMapper mapper, ApplicationDbContext akumaContext)
         {
-            _akumaRepository = akumaRepository;
+            _akumaRepository = akumaRepository ??
+                throw new ArgumentNullException(nameof(akumaRepository)); ;
             _mapper = mapper;
+            _akumaContext = akumaContext;   
         }
 
-        public async Task<IEnumerable<AkumaNoMiDTO>> GetAkumas()
+        public async Task<PagedList<AkumaNoMi>> GetAkumas(AkumaParameters akumaParameters)
         {
-            var akumasEntity = await _akumaRepository.GetAkumasAsync();
-            return _mapper.Map<IEnumerable<AkumaNoMiDTO>>(akumasEntity);   
+            return await PagedList<AkumaNoMi>.ToPagedList(_akumaContext.AkumaNoMis, 
+                akumaParameters.PageNumber, akumaParameters.PageSize);
         }
 
         public async Task<AkumaNoMiDTO> GetById(int id)
