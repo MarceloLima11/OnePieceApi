@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using OnePiece.Application.DTOs;
 using OnePiece.Application.Interfaces;
+using OnePiece.Domain.Entities;
 using OnePiece.Domain.Pagination;
 
 namespace OnePiece.Api.Controllers
@@ -11,10 +13,12 @@ namespace OnePiece.Api.Controllers
     public class PersonagemController : Controller
     {
         private readonly IPersonagemService _personagemService;
+        private readonly IMapper _mapper;
 
-        public PersonagemController(IPersonagemService personagemService)
+        public PersonagemController(IPersonagemService personagemService, IMapper mapper)
         {
             _personagemService = personagemService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -33,8 +37,8 @@ namespace OnePiece.Api.Controllers
             };
 
             Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
-
-            return Ok(personagens);
+            var personagensDto = _mapper.Map<PagedList<PersonagemDTO>>(personagens);
+            return personagensDto;
         }
 
         [HttpGet("{id}", Name = "GetPersonagem")]
@@ -78,17 +82,17 @@ namespace OnePiece.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] PersonagemDTO personagemDTO)
+        public async Task<ActionResult> Post([FromBody] PersonagemDTO personagemDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            await _personagemService.Add(personagemDTO);
+            await _personagemService.Add(personagemDto);
 
             return new CreatedAtRouteResult("GetPersonagem",
-                new { id = personagemDTO.Id }, personagemDTO);
+                new { id = personagemDto.Id}, personagemDto);
         }
     }
 }

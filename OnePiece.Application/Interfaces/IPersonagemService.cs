@@ -1,4 +1,5 @@
 ﻿using OnePiece.Application.DTOs;
+using OnePiece.Domain.Entities;
 using OnePiece.Domain.Pagination;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace OnePiece.Application.Interfaces
 {
     public interface IPersonagemService
     {
-        Task<PagedList<PersonagemDTO>> GetPersonagens(PersonagemParameters personagemParameters);
+        Task<PagedList<Personagem>> GetPersonagens(PersonagemParameters personagemParameters);
         Task<PersonagemDTO> GetById(int id);
         Task Add(PersonagemDTO personagemDto);
         Task Update(PersonagemDTO personagemDto);

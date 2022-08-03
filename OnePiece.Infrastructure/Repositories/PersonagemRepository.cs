@@ -27,7 +27,7 @@ namespace OnePiece.Infrastructure.Repositories
             //    .Take(personagemParameters.PageSize)
             //    .ToListAsync();
 
-            return PagedList<Personagem>.ToPagedList(_personagemContext.Personagens,
+            return await PagedList<Personagem>.ToPagedList(_personagemContext.Personagens,
                 personagemParameters.PageNumber, personagemParameters.PageSize);
         }
 

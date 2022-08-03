@@ -107,6 +107,9 @@
             "projectReferences": {
               "C:\\Users\\Administrator\\Downloads\\OnePieceApi\\OnePiece\\OnePiece.Domain\\OnePiece.Domain.csproj": {
                 "projectPath": "C:\\Users\\Administrator\\Downloads\\OnePieceApi\\OnePiece\\OnePiece.Domain\\OnePiece.Domain.csproj"
+              },
+              "C:\\Users\\Administrator\\Downloads\\OnePieceApi\\OnePiece\\OnePiece.Infrastructure\\OnePiece.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Downloads\\OnePieceApi\\OnePiece\\OnePiece.Infrastructure\\OnePiece.Infrastructure.csproj"
               }
             }
           }

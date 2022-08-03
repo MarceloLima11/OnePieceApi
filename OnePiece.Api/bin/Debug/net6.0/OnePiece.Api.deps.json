@@ -273,7 +273,8 @@
       "OnePiece.Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "OnePiece.Domain": "1.0.0"
+          "OnePiece.Domain": "1.0.0",
+          "OnePiece.Infrastructure": "1.0.0"
         },
         "runtime": {
           "OnePiece.Application.dll": {}
@@ -291,6 +292,9 @@
         }
       },
       "OnePiece.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.7"
+        },
         "runtime": {
           "OnePiece.Domain.dll": {}
         }

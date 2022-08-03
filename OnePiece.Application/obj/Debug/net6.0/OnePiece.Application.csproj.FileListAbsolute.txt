@@ -13,3 +13,5 @@ C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Application\obj\D
 C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Application\obj\Debug\net6.0\refint\OnePiece.Application.dll
 C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Application\obj\Debug\net6.0\OnePiece.Application.pdb
 C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Application\obj\Debug\net6.0\ref\OnePiece.Application.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Application\bin\Debug\net6.0\OnePiece.Infrastructure.dll
+C:\Users\Administrator\Downloads\OnePieceApi\OnePiece\OnePiece.Application\bin\Debug\net6.0\OnePiece.Infrastructure.pdb

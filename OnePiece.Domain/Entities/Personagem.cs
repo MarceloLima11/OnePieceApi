@@ -9,9 +9,6 @@ namespace OnePiece.Domain.Entities
 {
     public sealed class Personagem : Entity
     {
-        public Personagem()
-        { }
-
         public Personagem(string nome, int idade, string linhagem, string altura, bool vivo, string recompensa,
             string fraseMarcante, string primeiraAparicao, string descricao, string imagemUrl, bool topCinco)
         {

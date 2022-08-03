@@ -492,7 +492,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
-          "OnePiece.Domain": "1.0.0"
+          "OnePiece.Domain": "1.0.0",
+          "OnePiece.Infrastructure": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OnePiece.Application.dll": {}

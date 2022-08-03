@@ -16,12 +16,13 @@ namespace OnePiece.Application.DTOs
         public int Idade { get; set; }
         public string Linhagem { get; set; }
         public string Altura { get; set; }
-        public string Status { get; set; }
+        public bool Vivo { get; set; }
         public string Recompensa { get; set; }
         public string FraseMarcante { get; set; }
         public string PrimeiraAparicao { get; set; }
         public string Descricao { get; set; }
         public string ImagemUrl { get; set; }
+        public bool TopCinco { get; set; }
         public int? AkumaNoMiId { get; set; }
     }
 }

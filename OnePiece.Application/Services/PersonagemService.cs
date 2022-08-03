@@ -4,6 +4,7 @@ using OnePiece.Application.Interfaces;
 using OnePiece.Domain.Entities;
 using OnePiece.Domain.Interfaces;
 using OnePiece.Domain.Pagination;
+using OnePiece.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,18 +17,19 @@ namespace OnePiece.Application.Services
     {
         private IPersonagemRepository _personagemRepository;
         private readonly IMapper _mapper;
+        private ApplicationDbContext _personagemContext;
 
-        public PersonagemService(IPersonagemRepository personagemRepository, IMapper mapper)
+        public PersonagemService(IPersonagemRepository personagemRepository, IMapper mapper, ApplicationDbContext personagemContext)
         {
             _personagemRepository = personagemRepository ??
                 throw new ArgumentNullException(nameof(personagemRepository));
             _mapper = mapper;
+            _personagemContext = personagemContext;
         }
 
-        public async Task<PagedList<PersonagemDTO>> GetPersonagens(PersonagemParameters personagemParameters)
+        public async Task<PagedList<Personagem>> GetPersonagens(PersonagemParameters personagemParameters)
         {
-            var personagensEntity = await _personagemRepository.GetPersonagensAsync(personagemParameters);
-            return _mapper.Map<PagedList<PersonagemDTO>>(personagensEntity);
+            return await PagedList<Personagem>.ToPagedList(_personagemContext.Personagens, personagemParameters.PageNumber, personagemParameters.PageSize);
         }
 
         public async Task<PersonagemDTO> GetById(int id)

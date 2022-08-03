@@ -333,6 +333,9 @@
         }
       },
       "OnePiece.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.7"
+        },
         "runtime": {
           "OnePiece.Domain.dll": {}
         }

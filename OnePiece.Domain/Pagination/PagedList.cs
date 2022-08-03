@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace OnePiece.Domain.Pagination
 {
@@ -12,6 +13,9 @@ namespace OnePiece.Domain.Pagination
         public bool HasPrevious => CurrentPage < 1;
         public bool HasNext => CurrentPage < TotalPages;
 
+        public PagedList()
+        {}
+        
         public PagedList(List<T> items, int count, int pageNumber, int pageSize)
         {
             TotalCount = count;
