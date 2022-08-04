@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +27,10 @@ namespace OnePiece.CrossCutting.IoC
             services.AddScoped<IAkumaNoMiService, AkumaNoMiService>();
 
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
+
+            //services.AddIdentity<IdentityUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<ApplicationDbContext>()
+            //    .AddDefaultTokenProviders();
 
             return services;
         }

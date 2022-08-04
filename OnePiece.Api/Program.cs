@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Identity;
 using OnePiece.CrossCutting.IoC;
+using OnePiece.Infrastructure.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 //});
 
 builder.Services.AddInfrastructure(builder.Configuration);
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
 builder.Services.AddControllers();
 
@@ -28,6 +34,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
