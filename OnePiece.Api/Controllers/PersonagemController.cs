@@ -1,13 +1,15 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using OnePiece.Application.DTOs;
 using OnePiece.Application.Interfaces;
-using OnePiece.Domain.Entities;
 using OnePiece.Domain.Pagination;
 
 namespace OnePiece.Api.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/v1/[Controller]")]
     [ApiController]
     public class PersonagemController : Controller
