@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using OnePiece.Application.DTOs;
@@ -9,6 +10,7 @@ namespace OnePiece.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/[Controller]")]
+    [EnableCors("ApiRequestIo")]
     public class AkumaNoMiController : Controller
     {
         private readonly IAkumaNoMiService _akumaService;

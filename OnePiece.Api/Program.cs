@@ -79,6 +79,15 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ApiRequestIo", builder =>
+        {
+            builder.WithOrigins("https://www.apirequest.io")
+            .WithMethods("GET");
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -90,9 +99,18 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
+
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+//app.UseCors(options =>
+//{
+//    options.WithOrigins("https://www.apirequest.io").WithMethods("POST");
+//});
+
+app.UseCors();
 
 app.MapControllers();
 
