@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "D+bpPjkuvzwwmOBwgwWhaf1qEd1v6WAIMnLyQq7U79v62dq/o94aecVK5wteJMW1k1AQ7FrfQ0bf1md+JjCnKw==",
+  "dgSpecHash": "+yap7lF2dTA/oNaAEh0HIdsNK0w4K+6JLxg0lP61k3jpi8drenQWVM27huKl4E6m5ADsxmLREXlos2hfRobRNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Downloads\\OnePieceApi\\OnePiece\\OnePiece.Api\\OnePiece.Api.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.7\\microsoft.aspnetcore.cryptography.internal.6.0.7.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.7\\microsoft.aspnetcore.cryptography.keyderivation.6.0.7.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.7\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.7.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.7\\microsoft.entityframeworkcore.6.0.7.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.7\\microsoft.entityframeworkcore.abstractions.6.0.7.nupkg.sha512",
