@@ -1,13 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OnePiece.Domain.Entities;
+﻿using OnePiece.Domain.Entities;
 using OnePiece.Domain.Interfaces;
 using OnePiece.Domain.Pagination;
 using OnePiece.Infrastructure.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnePiece.Infrastructure.Repositories
 {

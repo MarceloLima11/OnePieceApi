@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using OnePiece.Application.DTOs;
@@ -9,9 +10,11 @@ using OnePiece.Domain.Pagination;
 
 namespace OnePiece.Api.Controllers
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("api/v1/[Controller]")]
     [ApiController]
+    [EnableCors("ApiRequestIo")]
+    [Route("api/v1/[Controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
     public class PersonagemController : Controller
     {
         private readonly IPersonagemService _personagemService;

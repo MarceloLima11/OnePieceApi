@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -9,8 +11,9 @@ using OnePiece.Domain.Pagination;
 namespace OnePiece.Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/[Controller]")]
     [EnableCors("ApiRequestIo")]
+    [Route("api/v1/[Controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class AkumaNoMiController : Controller
     {
         private readonly IAkumaNoMiService _akumaService;
