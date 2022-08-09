@@ -17,14 +17,12 @@ namespace OnePiece.Application.Services
     {
         private IPersonagemRepository _personagemRepository;
         private readonly IMapper _mapper;
-        private ApplicationDbContext _personagemContext;
 
-        public PersonagemService(IPersonagemRepository personagemRepository, IMapper mapper, ApplicationDbContext personagemContext)
+        public PersonagemService(IPersonagemRepository personagemRepository, IMapper mapper)
         {
             _personagemRepository = personagemRepository ??
                 throw new ArgumentNullException(nameof(personagemRepository));
             _mapper = mapper;
-            _personagemContext = personagemContext;
         }
 
         public async Task<PagedList<Personagem>> GetPersonagens(PersonagemParameters personagemParameters)

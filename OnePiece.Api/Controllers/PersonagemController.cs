@@ -13,7 +13,7 @@ namespace OnePiece.Api.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [EnableCors("ApiRequestIo")]
-    [Route("api/{v:apiVersion}/[Controller]")]
+    [Route("api/v{apiVersion}/[Controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 
     public class PersonagemController : Controller

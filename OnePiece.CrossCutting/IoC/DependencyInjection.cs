@@ -1,14 +1,17 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using OnePiece.Application.Interfaces;
 using OnePiece.Application.Mappings;
 using OnePiece.Application.Services;
 using OnePiece.Domain.Interfaces;
 using OnePiece.Infrastructure.Context;
 using OnePiece.Infrastructure.Repositories;
+using System.Text;
 
 namespace OnePiece.CrossCutting.IoC
 {
@@ -17,7 +20,8 @@ namespace OnePiece.CrossCutting.IoC
         public static IServiceCollection AddInfrastructure(this IServiceCollection services,
             IConfiguration configuration)
         {
-            services.AddDbContext<ApplicationDbContext>(options => {
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
                 options.UseNpgsql(configuration.GetConnectionString("OnePieceConnection"));
             });
 
@@ -25,6 +29,7 @@ namespace OnePiece.CrossCutting.IoC
             services.AddScoped<IAkumaNoMiRepository, AkumaNoMiRepository>();
             services.AddScoped<IPersonagemService, PersonagemService>();
             services.AddScoped<IAkumaNoMiService, AkumaNoMiService>();
+            services.AddScoped<IAccountService, AccountService>();
 
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
@@ -34,5 +39,28 @@ namespace OnePiece.CrossCutting.IoC
 
             return services;
         }
+
+        public static IServiceCollection AddTokenConfig(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddAuthentication(
+            JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidAudience = configuration["TokenConfiguration:Audience"],
+                        ValidIssuer = configuration["TokenConfiguration:Issuer"],
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                   Encoding.UTF8.GetBytes(configuration["Jwt:key"]))
+                    };
+                });
+
+            return services;
+        }
+
     }
 }

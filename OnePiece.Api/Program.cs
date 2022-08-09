@@ -27,22 +27,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 // esquema de autenticao usado: Bearer
 // valida o emissor, a audiencia e a chave
 // usando a chave secreta valida a assinatura
-builder.Services.AddAuthentication(
-    JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidAudience = builder.Configuration["TokenConfiguration:Audience"],
-            ValidIssuer = builder.Configuration["TokenConfiguration:Issuer"],
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:key"]))
-        };
-    });
+builder.Services.AddTokenConfig(builder.Configuration);
 
 builder.Services.AddControllers();
 
