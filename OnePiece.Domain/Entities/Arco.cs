@@ -43,40 +43,40 @@ namespace OnePiece.Domain.Entities
                 "Imagem URL inválida. Imagem URL é obrigatório");
 
             DomainExceptionValidation.When(imagemUrl.Length < 4,
-                "Imagem URL inválida. Imagem URL deve ter no mínimo 10 caracteres");
+                "Imagem URL inválida. Imagem URL deve ter no mínimo 4 caracteres");
 
-            DomainExceptionValidation.When(imagemUrl.Length > 9,
-                "Imagem URL inválida. Imagem URL deve ter no máximo 9");
+            DomainExceptionValidation.When(imagemUrl.Length > 300,
+                "Imagem URL inválida. Imagem URL deve ter no máximo 300");
 
             // Volumes
             DomainExceptionValidation.When(string.IsNullOrEmpty(volumes),
                 "Volumes inválido. Volumes é obrigatório");
 
-            DomainExceptionValidation.When(volumes.Length < 10,
-                "Volumes inválido. Volumes deve ter no mínimo 10 caracteres");
+            DomainExceptionValidation.When(volumes.Length < 1,
+                "Volumes inválido. Volumes deve ter no mínimo 1 caracteres");
 
-            DomainExceptionValidation.When(volumes.Length > 200,
-                "Volumes inválido. Volumes deve ter no máximo 200");
+            DomainExceptionValidation.When(volumes.Length > 8,
+                "Volumes inválido. Volumes deve ter no máximo 8 caracteres");
 
             // Capitulos Manga
             DomainExceptionValidation.When(string.IsNullOrEmpty(capitulosManga),
                 "Capitulos manga inválido. Capitulos manga é obrigatório");
 
-            DomainExceptionValidation.When(capitulosManga.Length < 10,
-                "Capitulos manga inválido. Capitulos manga deve ter no mínimo 10 caracteres");
+            DomainExceptionValidation.When(capitulosManga.Length < 1,
+                "Capitulos manga inválido. Capitulos manga deve ter no mínimo 1 caracteres");
 
-            DomainExceptionValidation.When(capitulosManga.Length > 200,
-                "Capitulos manga inválido. Capitulos manga deve ter no máximo 200");
+            DomainExceptionValidation.When(capitulosManga.Length > 11,
+                "Capitulos manga inválido. Capitulos manga deve ter no máximo 11 caracteres");
 
             // Ano Lançamento
             DomainExceptionValidation.When(string.IsNullOrEmpty(anoLancamento),
                 "Ano de lançamento inválido. Ano de lançamento é obrigatório");
 
-            DomainExceptionValidation.When(anoLancamento.Length < 10,
-                "Ano de lançamento inválido. Ano de lançamento deve ter no mínimo 10 caracteres");
+            DomainExceptionValidation.When(anoLancamento.Length < 1,
+                "Ano de lançamento inválido. Ano de lançamento deve ter no mínimo 1 caracteres");
 
-            DomainExceptionValidation.When(anoLancamento.Length > 200,
-                "Ano de lançamento inválido. Ano de lançamento deve ter no máximo 200");
+            DomainExceptionValidation.When(anoLancamento.Length > 9,
+                "Ano de lançamento inválido. Ano de lançamento deve ter no máximo 9");
 
 
             // Descrição

@@ -15,6 +15,7 @@ namespace OnePiece.Application.Mappings
         {
             CreateMap<Personagem, PersonagemDTO>().ReverseMap();
             CreateMap<AkumaNoMi, AkumaNoMiDTO>().ReverseMap();
+            CreateMap<Arco, ArcoDTO>().ReverseMap();
         }
     }
 }

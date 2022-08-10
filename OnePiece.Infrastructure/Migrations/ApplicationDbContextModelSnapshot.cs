@@ -262,6 +262,56 @@ namespace OnePiece.Infrastructure.Migrations
                     b.ToTable("tb_akumas", (string)null);
                 });
 
+            modelBuilder.Entity("OnePiece.Domain.Entities.Arco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AnoLancamento")
+                        .IsRequired()
+                        .HasMaxLength(9)
+                        .HasColumnType("character varying(9)")
+                        .HasColumnName("ano_lancamento");
+
+                    b.Property<string>("CapitulosManga")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("character varying(11)")
+                        .HasColumnName("capitulos_manga");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(20000)
+                        .HasColumnType("character varying(20000)")
+                        .HasColumnName("descricao");
+
+                    b.Property<string>("ImagemUrl")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)")
+                        .HasColumnName("imagem_link");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(17)
+                        .HasColumnType("character varying(17)")
+                        .HasColumnName("nome");
+
+                    b.Property<string>("Volumes")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("character varying(8)")
+                        .HasColumnName("volumes");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tb_arcos", (string)null);
+                });
+
             modelBuilder.Entity("OnePiece.Domain.Entities.Personagem", b =>
                 {
                     b.Property<int>("Id")
