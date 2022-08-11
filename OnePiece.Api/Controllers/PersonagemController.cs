@@ -16,7 +16,7 @@ namespace OnePiece.Api.Controllers
     [Route("api/v{apiVersion}/[Controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 
-    public class PersonagemController : Controller
+    public class PersonagemController : ControllerBase
     {
         private readonly IPersonagemService _personagemService;
         private readonly IMapper _mapper;

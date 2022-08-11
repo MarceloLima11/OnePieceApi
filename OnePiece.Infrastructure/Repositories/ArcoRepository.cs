@@ -14,10 +14,10 @@ namespace OnePiece.Infrastructure.Repositories
             _arcoContext = arcoContext;
         }
 
-        public async Task<PagedList<Arco>> GetAkumasAsync(ArcoParameters akumaParameters)
+        public async Task<PagedList<Arco>> GetArcosAsync(ArcoParameters arcoParameters)
         {
             return await PagedList<Arco>.ToPagedList(_arcoContext.Arcos,
-                akumaParameters.PageNumber, akumaParameters.PageSize);
+                arcoParameters.PageNumber, arcoParameters.PageSize);
         }
 
         public async Task<Arco> GetByIdAsync(int id)

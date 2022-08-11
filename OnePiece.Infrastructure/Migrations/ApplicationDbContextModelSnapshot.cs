@@ -312,6 +312,34 @@ namespace OnePiece.Infrastructure.Migrations
                     b.ToTable("tb_arcos", (string)null);
                 });
 
+            modelBuilder.Entity("OnePiece.Domain.Entities.Ilha", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Clima")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Regiao")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ilhas");
+                });
+
             modelBuilder.Entity("OnePiece.Domain.Entities.Personagem", b =>
                 {
                     b.Property<int>("Id")

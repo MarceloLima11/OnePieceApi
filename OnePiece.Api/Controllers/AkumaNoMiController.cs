@@ -15,7 +15,7 @@ namespace OnePiece.Api.Controllers
     [EnableCors("ApiRequestIo")]
     [Route("api/{v:apiVersion}/[Controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public class AkumaNoMiController : Controller
+    public class AkumaNoMiController : ControllerBase
     {
         private readonly IAkumaNoMiService _akumaService;
         private readonly IMapper _mapper;

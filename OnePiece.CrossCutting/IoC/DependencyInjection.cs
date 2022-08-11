@@ -28,11 +28,13 @@ namespace OnePiece.CrossCutting.IoC
             services.AddScoped<IPersonagemRepository, PersonagemRepository>();
             services.AddScoped<IAkumaNoMiRepository, AkumaNoMiRepository>();
             services.AddScoped<IArcoRepository, ArcoRepository>();
+            services.AddScoped<IIlhaRepository, IlhaRepository>();
 
             services.AddScoped<IPersonagemService, PersonagemService>();
             services.AddScoped<IAkumaNoMiService, AkumaNoMiService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IArcoService, ArcoService>();
+            services.AddScoped<IIlhaService, IlhaService>();    
 
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 

@@ -78,7 +78,6 @@ namespace OnePiece.Domain.Entities
             DomainExceptionValidation.When(anoLancamento.Length > 9,
                 "Ano de lançamento inválido. Ano de lançamento deve ter no máximo 9");
 
-
             // Descrição
             DomainExceptionValidation.When(string.IsNullOrEmpty(descricao),
                 "Descrição inválida. A descrição é obrigatória");

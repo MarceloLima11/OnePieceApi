@@ -1,20 +1,12 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OnePiece.CrossCutting.IoC;
 using OnePiece.Infrastructure.Context;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-//builder.Services.AddDbContext<ApplicationDbContext>(options =>
-//{
-//    options.UseNpgsql(builder.Configuration.GetConnectionString("OnePieceConnection"));
-//});
 
 builder.Services.AddInfrastructure(builder.Configuration);
 

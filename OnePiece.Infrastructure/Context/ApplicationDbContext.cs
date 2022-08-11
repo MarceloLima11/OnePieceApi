@@ -14,6 +14,7 @@ namespace OnePiece.Infrastructure.Context
         public DbSet<Personagem> Personagens { get; set; }
         public DbSet<AkumaNoMi> AkumaNoMis { get; set; }
         public DbSet<Arco> Arcos { get; set; }
+        public DbSet<Ilha> Ilhas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

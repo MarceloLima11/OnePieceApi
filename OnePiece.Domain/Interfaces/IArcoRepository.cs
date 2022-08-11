@@ -5,7 +5,7 @@ namespace OnePiece.Domain.Interfaces
 {
     public interface IArcoRepository
     {
-        Task<PagedList<Arco>> GetAkumasAsync(ArcoParameters arcoParameters);
+        Task<PagedList<Arco>> GetArcosAsync(ArcoParameters arcoParameters);
         Task<Arco> GetByIdAsync(int id);
         Task<Arco> CreateAsync(Arco arco);
         Task<Arco> UpdateAsync(Arco arco);
