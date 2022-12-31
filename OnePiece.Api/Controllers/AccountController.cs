@@ -6,8 +6,9 @@ using System.Text;
 
 namespace OnePiece.Api.Controllers
 {
+    [ApiVersion("1")]
     [ApiController]
-    [Route("api/v1/[Controller]")]
+    [Route("api/v{version:apiVersion}/[Controller]")]
     public class AccountController : ControllerBase
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -16,7 +17,7 @@ namespace OnePiece.Api.Controllers
         private readonly IAccountService _accService;
 
         public AccountController(UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager, 
+            SignInManager<IdentityUser> signInManager,
             IConfiguration configuration, IAccountService accService)
         {
             _userManager = userManager;
@@ -40,8 +41,8 @@ namespace OnePiece.Api.Controllers
             //    return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
             //}
 
-            var user = new IdentityUser 
-            { 
+            var user = new IdentityUser
+            {
                 UserName = model.Email,
                 Email = model.Email,
                 EmailConfirmed = true

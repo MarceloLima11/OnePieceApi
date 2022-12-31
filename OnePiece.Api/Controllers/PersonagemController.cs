@@ -11,9 +11,9 @@ using OnePiece.Domain.Pagination;
 namespace OnePiece.Api.Controllers
 {
     [ApiController]
-    [ApiVersion("1.0")]
+    [ApiVersion("1")]
     [EnableCors("ApiRequestIo")]
-    [Route("api/v{apiVersion}/[Controller]")]
+    [Route("api/v{version:apiVersion}/[Controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 
     public class PersonagemController : ControllerBase
@@ -62,7 +62,7 @@ namespace OnePiece.Api.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] PersonagemDTO personagemDto)
         {
-            if(id != personagemDto.Id)
+            if (id != personagemDto.Id)
             {
                 return BadRequest();
             }
@@ -77,7 +77,7 @@ namespace OnePiece.Api.Controllers
         {
             var personagemDto = await _personagemService.GetById(id);
 
-            if(personagemDto == null)
+            if (personagemDto == null)
             {
                 NotFound();
             }
@@ -98,7 +98,7 @@ namespace OnePiece.Api.Controllers
             await _personagemService.Add(personagemDto);
 
             return new CreatedAtRouteResult("GetPersonagem",
-                new { id = personagemDto.Id}, personagemDto);
+                new { id = personagemDto.Id }, personagemDto);
         }
     }
 }

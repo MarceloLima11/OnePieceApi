@@ -11,9 +11,9 @@ using OnePiece.Domain.Pagination;
 namespace OnePiece.Api.Controllers
 {
     [ApiController]
-    [ApiVersion("1.0")]
+    [ApiVersion("1")]
     [EnableCors("ApiRequestIo")]
-    [Route("api/{v:apiVersion}/[Controller]")]
+    [Route("api/v{version:apiVersion}/[Controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ArcoController : ControllerBase
     {

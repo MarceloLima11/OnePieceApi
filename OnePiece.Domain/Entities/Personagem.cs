@@ -46,7 +46,7 @@ namespace OnePiece.Domain.Entities
                 "O nome deve ter no maximo 25 caracteres");
 
             // Idade
-            DomainExceptionValidation.When(idade < 0, 
+            DomainExceptionValidation.When(idade < 0,
                 "Idade inválida. Idade deve ser maior que 0");
 
             DomainExceptionValidation.When(idade > 1000,
@@ -106,7 +106,7 @@ namespace OnePiece.Domain.Entities
             DomainExceptionValidation.When(string.IsNullOrEmpty(descricao),
                 "Descrição inválida. A descrição é obrigatória");
 
-            DomainExceptionValidation.When(descricao.Length < 1000,
+            DomainExceptionValidation.When(descricao.Length < 30,
                 "Descrição inválida. Descrição deve ter no mínimo 1000 caracteres");
 
             DomainExceptionValidation.When(descricao.Length > 20000,
@@ -122,15 +122,15 @@ namespace OnePiece.Domain.Entities
             Nome = nome;
             Idade = idade;
             Linhagem = linhagem;
-            Altura = altura;    
+            Altura = altura;
             Vivo = vivo;
             Recompensa = recompensa;
-            FraseMarcante = fraseMarcante;  
+            FraseMarcante = fraseMarcante;
             PrimeiraAparicao = primeiraAparicao;
             Descricao = descricao;
             ImagemUrl = imagemUrl;
             TopCinco = topCinco;
-            
+
         }
         public int AkumaNoMiId { get; set; }
         public AkumaNoMi AkumaNoMi { get; set; }

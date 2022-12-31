@@ -11,9 +11,9 @@ using OnePiece.Domain.Pagination;
 namespace OnePiece.Api.Controllers
 {
     [ApiController]
-    [ApiVersion("1.0")]
+    [ApiVersion("1")]
     [EnableCors("ApiRequestIo")]
-    [Route("api/{v:apiVersion}/[Controller]")]
+    [Route("api/v{version:apiVersion}/[Controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class AkumaNoMiController : ControllerBase
     {
@@ -23,7 +23,7 @@ namespace OnePiece.Api.Controllers
         public AkumaNoMiController(IAkumaNoMiService akumasService, IMapper mapper)
         {
             _akumaService = akumasService;
-            _mapper = mapper;   
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -31,7 +31,8 @@ namespace OnePiece.Api.Controllers
         {
             var akumas = await _akumaService.GetAkumas(akumaParameters);
 
-            var metadata = new {
+            var metadata = new
+            {
                 akumas.TotalCount,
                 akumas.PageSize,
                 akumas.CurrentPage,

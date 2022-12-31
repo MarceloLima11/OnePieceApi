@@ -37,8 +37,8 @@ builder.Services.AddSwaggerGen(options =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Header de autorização JWT usando o esquema bearer. " +
-        "\r\n\r\nInfome 'Bearer' [espaço] e o seu token. \r\n\r\nExemplo: \'Bearer 12345abcdef\'"
+        Description = "Header de autorizaï¿½ï¿½o JWT usando o esquema bearer. " +
+        "\r\n\r\nInfome 'Bearer' [espaï¿½o] e o seu token. \r\n\r\nExemplo: \'Bearer 12345abcdef\'"
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -70,11 +70,16 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddApiVersioning(options =>
 {
-    options.AssumeDefaultVersionWhenUnspecified = true;
     options.DefaultApiVersion = new ApiVersion(1, 0);
     options.ReportApiVersions = true;
+    options.AssumeDefaultVersionWhenUnspecified = true;
 });
 
+builder.Services.AddVersionedApiExplorer(config =>
+{
+    config.GroupNameFormat = "'v'VVV";
+    config.SubstituteApiVersionInUrl = true;
+});
 
 var app = builder.Build();
 
@@ -83,6 +88,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseApiVersioning();
 }
 
 app.UseHttpsRedirection();

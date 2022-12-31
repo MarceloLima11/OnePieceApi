@@ -58,7 +58,7 @@ namespace OnePiece.Domain.Entities
             DomainExceptionValidation.When(string.IsNullOrEmpty(descricao),
                 "Descrição inválida. A descrição é obrigatória");
 
-            DomainExceptionValidation.When(descricao.Length < 1000,
+            DomainExceptionValidation.When(descricao.Length < 30,
                 "Descrição inválida. Descrição deve ter no mínimo 1000 caracteres");
 
             DomainExceptionValidation.When(descricao.Length > 20000,
